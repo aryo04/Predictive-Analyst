@@ -410,3 +410,5 @@ Nilai-nilai ini didapat dari confusion matrix, dan digunakan untuk menghitung be
 
 * Naïve Bayes memiliki performa terendah karena ketidakseimbangan prediksi, terutama pada kelas negatif (non-stroke).
 
+_Catatan:_
+Jika ada gambar yang tidak terlihat, dapat dilihat link github di bawah ini
