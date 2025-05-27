@@ -130,106 +130,136 @@ Dataset yang digunakan diperoleh dari platform Kaggle dengan judul '[Stroke Pred
 ### Exploratory Data Analysis
 1. Distribusi Kelas
 
-   ![image](https://github.com/user-attachments/assets/d79d2a42-c3c5-4275-b828-cdc3a6375d34)
+   ![Distribusi Kelas](img/img-1.png)
 
-   **Insight**: Distribusi kelas tidak seimbang, dimana jumlah pasien dengan stroke (1) jauh lebih sedikit dibandingkan yang tidak mengalami stroke (0), sehingga     diperlukan teknik penanganan ketidakseimbangan data, seperti SMOTE untuk menyeimbangkan distrbusinya.
+   **Insight**:
+   Distribusi kelas tidak seimbang, dimana jumlah pasien dengan stroke (1) jauh lebih sedikit 
+   dibandingkan yang tidak mengalami stroke (0), sehingga diperlukan teknik penanganan 
+   ketidakseimbangan data, seperti SMOTE untuk menyeimbangkan distrbusinya.
 
 2. Distibusi Variabel Numerik
 
-    ![image](https://github.com/user-attachments/assets/1f5a634c-1ea2-484d-9285-f2504b090835)
+    ![Distibusi Variabel Numerik](img/img-2.png)
 
    **Insight**:
    * `age`: Distribusi usia cenderung merata, dengan sedikit puncak pada usia 50–60 tahun.
 
-   * `hypertension` & `heart_disease`: Mayoritas data bernilai 0, menunjukkan sebagian besar individu tidak memiliki hipertensi atau penyakit jantung.
+   * `hypertension` & `heart_disease`: Mayoritas data bernilai 0, menunjukkan sebagian besar 
+      individu tidak memiliki hipertensi atau penyakit jantung.
 
-   * `avg_glucose_level`: Distribusi condong ke kanan (right-skewed), menunjukkan ada beberapa individu dengan kadar glukosa sangat tinggi.
+   * `avg_glucose_level`: Distribusi condong ke kanan (right-skewed), menunjukkan ada beberapa 
+      individu dengan kadar glukosa sangat tinggi.
 
-   * `bmi`: Sebagian besar nilai berada di kisaran 20–40, tetapi ada outlier dengan nilai ekstrem mendekati 100
+   * `bmi`: Sebagian besar nilai berada di kisaran 20–40, tetapi ada outlier dengan nilai 
+      ekstrem mendekati 100
 
-4. Korelasi Antar Variabel Numerik
+3. Korelasi Antar Variabel Numerik
 
-   ![image](https://github.com/user-attachments/assets/ba3de57e-fb34-4140-a736-848019a45815)
+   ![Korelasi Antar Variabel Numerik](img/img-3.png)
 
    **Insight** :
-    * `age` memiliki korelasi sedang dengan `bmi` (0.33), menunjukkan sedikit hubungan antara kedua fitur tersebut. `Age` juga berkorelasi positif dengan                 `hypertension` (0.28), `heart_disease` (0.26), `avg_glucose_level` (0.24), dan `stroke` (0.25), yang berarti makin bertambah usia cenderung meningkatkan           risiko terhadap variabel-variabel tersebut.
+   * `age` memiliki korelasi sedang dengan `bmi` (0.33), menunjukkan sedikit hubungan antara 
+      kedua fitur tersebut. `Age` juga berkorelasi positif dengan `hypertension` (0.28), 
+      `heart_disease` (0.26), `avg_glucose_level` (0.24), dan `stroke` (0.25), yang berarti 
+      makin bertambah usia cenderung meningkatkan risiko terhadap variabel-variabel tersebut.
 
-    * `hypertension`, `heart_disease`, dan `avg_glucose_level` memiliki korelasi rendah satu sama lain, tetapi semua memiliki korelasi positif kecil dengan              `stroke` (~0.13), menunjukkan kontribusi lemah terhadap risiko stroke.
+   * `hypertension`, `heart_disease`, dan `avg_glucose_level` memiliki korelasi rendah satu 
+     sama lain, tetapi semua memiliki korelasi positif kecil dengan `stroke` (~0.13),  
+     menunjukkan kontribusi lemah terhadap risiko stroke.
 
-    * `bmi` berkorelasi sedang dengan age (0.33), namun sangat lemah dengan variabel lain, termasuk stroke (0.04), sehingga pengaruhnya sangat kecil.
+    * `bmi` berkorelasi sedang dengan age (0.33), namun sangat lemah dengan variabel lain, 
+      termasuk stroke (0.04), sehingga pengaruhnya sangat kecil.
 
-6. Distrbusi Variabel Kategorikal
+4. Distrbusi Variabel Kategorikal
 
-   ![image](https://github.com/user-attachments/assets/debb0060-1eb7-4fe4-8a8a-1be903df417c)
+   ![Distrbusi Variabel Kategorikal](img/img-4.png)
 
    **Insight** :
     * `gender`: Jenis kelamin perempuan lebih banyak dibandingkan laki-laki.
 
-    * `ever_married`: Sebagian besar individu sudah pernah menikah,yang menunjukkan usia individu cenderung dewasa.
+    * `ever_married`: Sebagian besar individu sudah pernah menikah,yang menunjukkan usia 
+      individu cenderung dewasa.
 
-    * `work_type`: Mayoritas individu tidak menyebutkan pekerjaannya (Private), kemudian Self-employed, childern, Govt_job, dan yang paling sedikit adalah yang          belum pernah bekerja.
+    * `work_type`: Mayoritas individu tidak menyebutkan pekerjaannya (Private), kemudian Self- 
+      employed, childern, Govt_job, dan yang paling sedikit adalah yang belum pernah bekerja.
 
     * `Residence_type`: Individu dari daerah Urban sedikit lebih banyak daripada Rural.
 
-    * `smoking_status`: Mayoritas individu tidak pernah merokok, diikuti oleh status Unknown, lalu formerly smoked, dan paling sedikit smokes.
-7. Korelasi Antar Fitur Kategorikal
+    * `smoking_status`: Mayoritas individu tidak pernah merokok, diikuti oleh status Unknown, 
+      lalu formerly smoked, dan paling sedikit smokes.
+      
+5. Korelasi Antar Fitur Kategorikal
 
-   ![image](https://github.com/user-attachments/assets/911a2577-a999-4efc-af40-f9dfc6223401)
+   ![Korelasi Antar Fitur Kategorika](img/img-5.png)
 
    **Insight** :
-    * `gender` tidak memiliki korelasi yang signifikan dengan fitur lain. Nilai korelasinya mendekati nol terhadap semua fitur.
+    * `gender` tidak memiliki korelasi yang signifikan dengan fitur lain. Nilai korelasinya 
+       mendekati nol terhadap semua fitur.
 
-    * `ever_married` memiliki korelasi sedang dengan `work_type` (0.38) dan `smoking_status` (0.30), menunjukkan bahwa status pernikahan sedikit berhubungan 
-      dengan jenis pekerjaan dan status merokok.
+    * `ever_married` memiliki korelasi sedang dengan `work_type` (0.38) dan `smoking_status` 
+      (0.30), menunjukkan bahwa status pernikahan sedikit berhubungan dengan jenis pekerjaan 
+      dan status merokok.
 
-    * `work_type` juga menunjukkan korelasi sedang dengan `smoking_status` (0.31),yang mengindikasikan bahwa jenis pekerjaan sedikit berhubungan dengan status            merokok.
+    * `work_type` juga menunjukkan korelasi sedang dengan `smoking_status` (0.31),yang 
+       mengindikasikan bahwa jenis pekerjaan sedikit berhubungan dengan status merokok.
 
-    * `Residence_type` tidak berkorelasi dengan fitur manapun, yang berarti tipe tempat tinggal tidak berpengaruh terhadap fitur kategorikal lainnya.
+    * `Residence_type` tidak berkorelasi dengan fitur manapun, yang berarti tipe tempat tinggal 
+      tidak berpengaruh terhadap fitur kategorikal lainnya.
 
-    * `smoking_status` memiliki korelasi sedang dengan `ever_married`(0.30) dan `work_type`(0.31), namun korelasinya dengan fitur lain sangat rendah.
+    * `smoking_status` memiliki korelasi sedang dengan `ever_married`(0.30) dan 
+      `work_type`(0.31), namun korelasinya dengan fitur lain sangat rendah.
  
-9. Pengecekan Outlier
+6. Pengecekan Outlier
 
-   ![image](https://github.com/user-attachments/assets/092e5ce4-3288-4f16-865b-b71076b54287)
+   ![Outlier](img/img-6.png)
 
    **Insight** :
-   variabel `avg_glucose_level` dan `bmi` mengandung banyak outlier. `avg_glucose_level` memiliki data ekstrem di atas 250, sementara `bmi` mencapai hampir 100.      Keberadaan outlier ini menyebabkan distribusi data menjadi tidak seimbang
+   variabel `avg_glucose_level` dan `bmi` mengandung banyak outlier. `avg_glucose_level` 
+   memiliki data ekstrem di atas 250, sementara `bmi` mencapai hampir 100.      Keberadaan 
+   outlier ini menyebabkan distribusi data menjadi tidak seimbang
 
 ## Data Preparation
 Proses ini dilakukan untuk memastikan dataset siap digunakan dalam pemodelan prediksi stroke. Tahapan ini dilakukan sebagai berikut:
 1. Drop Kolom id
 
-   ![image](https://github.com/user-attachments/assets/0955d020-3992-48a5-972a-0c645aca02f9)
+   ![Drop Kolom id](img/img-7.png)
 
-   Kolom id dihapus dari dataset karena hanya nomor unik  yang tidak memiliki nilai prediktif terhadap risiko stroke. 
+   Kolom id dihapus dari dataset karena hanya nomor unik  yang tidak memiliki nilai prediktif 
+   terhadap risiko stroke. 
    
 2. Menghapus Missing Value
 
-   ![image](https://github.com/user-attachments/assets/31a0ab10-6e08-47ef-8295-30bf80bbee14)
+   ![Menghapus Missing Value](img/img-8.png)
 
-   Missing value pada kolom bmi dihapus karena persentase hanya sedikit  missing value-nya dan menghapusnya tidak akan signifikan mengurangi jumlah data.
+   Missing value pada kolom bmi dihapus karena persentase hanya sedikit  missing value-nya dan 
+   menghapusnya tidak akan signifikan mengurangi jumlah data.
    
 3. Menangani Outlier
 
-   ![image](https://github.com/user-attachments/assets/08cecc68-2e84-49eb-9e26-d0080cd3add2)
+   ![Menangani Outlier](img/img-9.png)
 
-   Setelah menangani outlier menggunakan metode Z-score dengan threshold 3, terlihat bahwa nilai-nilai ekstrem pada fitur avg_glucose_level dan bmi masih tetap 
-   muncul dalam visualisasi boxplot, namun jumlahnya telah berkurang. Hal ini menunjukkan bahwa penerapan Z-score dengan ambang ±3 berhasil mengidentifikasi dan 
-   menghapus sebagian besar data yang menyimpang secara signifikan dari distribusi normalnya.
+   Setelah menangani outlier menggunakan metode Z-score dengan threshold 3, terlihat bahwa 
+   nilai-nilai ekstrem pada fitur avg_glucose_level dan bmi masih tetap muncul dalam 
+   visualisasi boxplot, namun jumlahnya telah berkurang. Hal ini menunjukkan bahwa penerapan Z- 
+   score dengan ambang ±3 berhasil mengidentifikasi dan menghapus sebagian besar data yang 
+   menyimpang secara signifikan dari distribusi normalnya.
    
 4. Encoding 
 
-   ![image](https://github.com/user-attachments/assets/a3f17d5d-707e-4d54-a2c0-aa88e83d5520)
+   ![Encoding](img/img-10.png)
 
-   Proses label encoding dilakukan untuk mengubah nilai kategorikal menjadi format numerik agar bisa diproses oleh algoritma machine learning. Setiap nilai 
-   pada kolom gender, ever_married, work_type, Residence_type, dan smoking_status dikonversi menjadi angka.
+   Proses label encoding dilakukan untuk mengubah nilai kategorikal menjadi format numerik agar 
+   bisa diproses oleh algoritma machine learning. Setiap nilai pada kolom gender, ever_married, 
+   work_type, Residence_type, dan smoking_status dikonversi menjadi angka menggunakan 
+   LabelEncoder.
    
 5. Normalisasi
 
-   ![image](https://github.com/user-attachments/assets/f68cbe82-cffe-4d01-a1e1-fa60de53790b)
+   ![Normalisasi](img/img-11.png)
 
-   Fitur numerik (age, avg_glucose_level, bmi) dinormalisasi menggunakan MinMaxScaler untuk mengubah nilai ke rentang 0-1. Normalisasi ini penting supaya rentang 
-   nilainya tidak berjauhan.
+   Fitur numerik (age, avg_glucose_level, bmi) dinormalisasi menggunakan MinMaxScaler untuk 
+   mengubah nilai ke rentang 0-1. Normalisasi ini penting supaya rentang nilainya tidak 
+   berjauhan.
 
 6. Penyeimbangan Data dan Split Data
    ```
@@ -240,24 +270,27 @@ Proses ini dilakukan untuk memastikan dataset siap digunakan dalam pemodelan pre
    X_resampled, y_resampled = smote.fit_resample(X, y)
    X_train, X_test, y_train, y_test = train_test_split(X_resampled, y_resampled, test_size=0.3, random_state=42)
    ```
-   Data diseimbangkan menggunakan teknik SMOTE (Synthetic Minority Oversampling Technique) untuk mengatasi ketidakseimbangan kelas antara pasien dengan stroke 
-   (minoritas) dan tanpa stroke (mayoritas). Setelah itu, dataset dibagi menjadi data latih (70%) dan data uji (30%). Penyeimbangan diperlukan untuk meningkatkan 
-   sensitivitas model terhadap kasus stroke.
+   Data diseimbangkan menggunakan teknik SMOTE (Synthetic Minority Oversampling Technique) 
+   untuk mengatasi ketidakseimbangan kelas antara pasien dengan stroke (minoritas) dan tanpa 
+   stroke (mayoritas). Setelah itu, dataset dibagi menjadi data latih (70%) dan data uji (30%). 
+   Penyeimbangan diperlukan untuk meningkatkan sensitivitas model terhadap kasus stroke.
 
 ## Modeling
 Pada tahap ini, dilakukan proses pemodelan untuk memprediksi risiko stroke menggunakan tiga algoritma machine learning, yaitu Random Forest, Naïve Bayes, dan XGBoost.
 
 1. Random Forest
 
-![image](https://github.com/user-attachments/assets/3f045d36-aafa-434a-92a9-23eea5b5909d)
+![Random Forest](img/img-12.png)
 
-   * Pengertian: Random Forest adalah algoritma ensemble yang menggabungkan banyak pohon keputusan (decision tree) untuk meningkatkan akurasi dan mengurangi 
-                 risiko overfitting.
+   * Pengertian: Random Forest adalah algoritma ensemble yang menggabungkan banyak pohon 
+     keputusan (decision tree) untuk meningkatkan akurasi dan mengurangi risiko overfitting.
     
-   * Cara Kerja: Membangun beberapa pohon keputusan dari subset data dan subset fitur yang dipilih secara acak (metode bagging), kemudian menggabungkan hasil 
-                 prediksi dari semua pohon dengan menggunakan voting mayoritas (klasifikasi).
+   * Cara Kerja: Membangun beberapa pohon keputusan dari subset data dan subset fitur yang 
+     dipilih secara acak (metode bagging), kemudian menggabungkan hasil prediksi dari semua 
+     pohon dengan menggunakan voting mayoritas (klasifikasi).
     
-   * Parameter yang digunakan: RandomForestClassifier(random_state=42, n_estimators=100, max_depth=None)
+   * Parameter yang digunakan: RandomForestClassifier(random_state=42, n_estimators=100, 
+     max_depth=None)
     
       * random_state=42: Menjamin hasil yang konsisten melalui seed pengacakan.
     
@@ -265,53 +298,61 @@ Pada tahap ini, dilakukan proses pemodelan untuk memprediksi risiko stroke mengg
     
       * max_depth=None: Kedalaman maksimum pohon tidak dibatasi.
     
-   * Kelebihan: Tahan terhadap overfitting, cocok untuk data dengan fitur campuran (numerik dan kategorikal), mampu memberikan informasi pentingnya fitur (feature 
-                importance).
+   * Kelebihan: Tahan terhadap overfitting, cocok untuk data dengan fitur campuran (numerik dan 
+     kategorikal), mampu memberikan informasi pentingnya fitur (feature importance).
     
-   * Kekurangan: Proses pelatihan bisa lambat pada dataset besar, kurang efisien tanpa seleksi fitur awal.
+   * Kekurangan: Proses pelatihan bisa lambat pada dataset besar, kurang efisien tanpa seleksi 
+     fitur awal.
     
-   * Hasil: Akurasi 0.937 (93,7%).
+   * Hasil: Accuracy 0.937 (93,7%).
 
 2. Naïve Bayes
 
-   ![image](https://github.com/user-attachments/assets/7c7e2361-106b-4458-ab5c-297e0049e18a)
+   ![Naïve Bayes](img/img-13.png)
 
-   * Pengertian: Naïve Bayes adalah algoritma berbasis probabilitas yang menerapkan teorema Bayes dengan asumsi bahwa fitur-fitur saling independen.
+   * Pengertian: Naïve Bayes adalah algoritma berbasis probabilitas yang menerapkan teorema 
+     Bayes dengan asumsi bahwa fitur-fitur saling independen.
     
-   * Cara Kerja: Menghitung probabilitas setiap kelas berdasarkan distribusi fitur (menggunakan distribusi Gaussian untuk fitur numerik), lalu memilih kelas 
-                 dengan probabilitas tertinggi.
+   * Cara Kerja: Menghitung probabilitas setiap kelas berdasarkan distribusi fitur (menggunakan 
+     distribusi Gaussian untuk fitur numerik), lalu memilih kelas dengan probabilitas tertinggi.
     
     * Parameter yang digunakan: GaussianNB(var_smoothing=1e-9)
     
-      * var_smoothing=1e-9: Menambahkan nilai kecil pada varians untuk menghindari pembagian dengan nol, meningkatkan stabilitas numerik.
+      * var_smoothing=1e-9: Menambahkan nilai kecil pada varians untuk menghindari pembagian 
+        dengan nol, meningkatkan stabilitas numerik.
     
     * Kelebihan: Cepat, efisien, dan bekerja baik pada dataset kecil atau sederhana.
     
-    * Kekurangan: Asumsi independensi fitur sering tidak terpenuhi dalam data medis, sehingga akurasi bisa menurun.
+    * Kekurangan: Asumsi independensi fitur sering tidak terpenuhi dalam data medis, sehingga 
+      akurasi bisa menurun.
     
-    * Hasil: Akurasi 0.708 (70,8%).
+    * Hasil: Accuracy 0.708 (70,8%).
   
 3. XGBoost
 
-   ![image](https://github.com/user-attachments/assets/187c01bb-d223-47f8-8382-663822bc195d)
+   ![XGBoost](img/img-14.png)
 
-   * Pengertian: XGBoost (Extreme Gradient Boosting) adalah algoritma gradient boosting yang membangun pohon keputusan secara bertahap untuk memperbaiki kesalahan 
-                 dari prediksi sebelumnya.
+   * Pengertian: XGBoost (Extreme Gradient Boosting) adalah algoritma gradient boosting yang 
+     membangun pohon keputusan secara bertahap untuk memperbaiki kesalahan dari prediksi 
+     sebelumnya.
 
-   * Cara Kerja: Model membangun pohon secara iteratif, fokus pada kesalahan (residual) dari model sebelumnya, dan mengatur bobot untuk menangani 
-                 ketidakseimbangan kelas.
+   * Cara Kerja: Model membangun pohon secara iteratif, fokus pada kesalahan (residual) dari 
+     model sebelumnya, dan mengatur bobot untuk menangani ketidakseimbangan kelas.
 
    * Parameter yang digunakan: XGBClassifier(objective='binary:logistic', random_state=42)
 
-      * objective='binary:logistic': Fungsi objektif untuk klasifikasi biner, menghasilkan probabilitas sebagai output.
+      * objective='binary:logistic': Fungsi objektif untuk klasifikasi biner, menghasilkan 
+        probabilitas sebagai output.
  
       * random_state=42: Menjamin konsistensi hasil dengan seed acak.
         
-      * Kelebihan: Akurasi tinggi, efektif untuk data tidak seimbang, mendukung banyak teknik optimasi dan tuning parameter.
+      * Kelebihan: Akurasi tinggi, efektif untuk data tidak seimbang, mendukung banyak teknik 
+        optimasi dan tuning parameter.
 
-      * Kekurangan: Kompleks dan membutuhkan penyesuaian parameter yang hati-hati agar tidak overfitting.
+      * Kekurangan: Kompleks dan membutuhkan penyesuaian parameter yang hati-hati agar tidak 
+        overfitting.
 
-      * Hasil: Akurasi 0.951 (95,1%).
+      * Hasil: Accuracy 0.951 (95,1%).
     
 Berdasarkan hasil akurasi dari ketiga algoritma, XGBoost dipilih sebagai model terbaik karena memperoleh akurasi tertinggi sebesar 95,13%, mengungguli Random Forest (93,76%) dan Naïve Bayes (70,08%). Selain itu, XGBoost memiliki kemampuan yang baik dalam menangani data tidak seimbang dan mendukung pengaturan parameter secara fleksibel, sehingga berpotensi memberikan hasil yang lebih optimal dalam prediksi risiko stroke.
 
@@ -408,4 +449,9 @@ Nilai-nilai ini didapat dari confusion matrix, dan digunakan untuk menghitung be
 
 * Random Forest memberikan performa baik dan cukup kompetitif, meskipun sedikit di bawah XGBoost.
 
-* Naïve Bayes memiliki performa terendah karena ketidakseimbangan prediksi, terutama pada kelas negatif (non-stroke).      
+* Naïve Bayes memiliki performa terendah karena ketidakseimbangan prediksi, terutama pada kelas negatif (non-stroke).
+
+_Catatan:_
+Jika ada gambar yang tidak terlihat, dapat dilihat link github di bawah ini: 
+
+https://github.com/aryo04/Predictive-Analyst
