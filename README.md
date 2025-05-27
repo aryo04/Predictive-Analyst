@@ -88,7 +88,7 @@ Dataset yang digunakan diperoleh dari platform Kaggle dengan judul '[Stroke Pred
    df.describe()
    ```
    ```
-       id	age	hypertension	heart_disease	avg_glucose_level	bmi	stroke
+            id	         age	   hypertension heart_disease avg_glucose_level bmi	stroke
     count	5110.000000	5110.000000	5110.000000	5110.000000	5110.000000	4909.000000	5110.000000
     mean	36517.829354	43.226614	0.097456	0.054012	106.147677	28.893237	0.048728
     std	21161.721625	22.612647	0.296607	0.226063	45.283560	7.854067	0.215320
