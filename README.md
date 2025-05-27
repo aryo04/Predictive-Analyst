@@ -87,7 +87,6 @@ Dataset yang digunakan diperoleh dari platform Kaggle dengan judul '[Stroke Pred
 3. ```
    df.describe()
    ```
-   ```
    |           | id       | age    | hypertension | heart_disease | avg_glucose_level | bmi    | stroke |
    |-----------|----------|--------|--------------|---------------|-------------------|--------|--------|
    | mean      | 36517.83 | 43.23  | 0.10         | 0.05          | 106.15            | 28.89  | 0.05   |
@@ -97,7 +96,6 @@ Dataset yang digunakan diperoleh dari platform Kaggle dengan judul '[Stroke Pred
    | 50%       | 36932.00 | 45.00  | 0.00         | 0.00          | 91.88             | 28.10  | 0.00   |
    | 75%       | 54682.00 | 61.00  | 0.00         | 0.00          | 114.09            | 33.10  | 0.00   |
    | max       | 72940.00 | 82.00  | 1.00         | 1.00          | 271.74            | 97.60  | 1.00   |
-   ```
    * Terdapat outlier pada kolom bmi dan avg_glucose_lvl berdasarkan hasil statistik deskriptif
 4. ```
    duplicate_count = df.duplicated().sum()
