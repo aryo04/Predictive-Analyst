@@ -137,7 +137,7 @@ Dataset yang digunakan diperoleh dari platform Kaggle dengan judul '[Stroke Pred
 
 2. Distibusi Variabel Numerik
 
-   ![istibusi Variabel Numerik](https://github.com/user-attachments/assets/bcb5786d-6e0c-4d27-ab2a-028c26e29c96)
+   ![Distibusi Variabel Numerik](https://github.com/user-attachments/assets/bcb5786d-6e0c-4d27-ab2a-028c26e29c96)
 
    **Insight**:
    * `age`: Distribusi usia cenderung merata, dengan sedikit puncak pada usia 50–60 tahun.
