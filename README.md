@@ -1,4 +1,4 @@
-![download](https://github.com/user-attachments/assets/206c19c5-6cf8-418e-93ba-f4df7aba53a5)# Laporan Proyek Machine Learning - Aryo Daffa Khairuddin
+# Laporan Proyek Machine Learning - Aryo Daffa Khairuddin
 
 ## Domain Proyek
 
