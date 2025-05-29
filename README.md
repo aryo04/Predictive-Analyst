@@ -1,4 +1,4 @@
-# Laporan Proyek Machine Learning - Aryo Daffa Khairuddin
+![download](https://github.com/user-attachments/assets/206c19c5-6cf8-418e-93ba-f4df7aba53a5)# Laporan Proyek Machine Learning - Aryo Daffa Khairuddin
 
 ## Domain Proyek
 
@@ -128,7 +128,7 @@ Dataset yang digunakan diperoleh dari platform Kaggle dengan judul '[Stroke Pred
 ### Exploratory Data Analysis
 1. Distribusi Kelas
 
-   ![Distribusi Kelas](img/img-1.png)
+   ![Distribusi Kelas](https://github.com/user-attachments/assets/5a118272-5a84-475f-a3e7-f63d3be196f1)
 
    **Insight**:
    Distribusi kelas tidak seimbang, dimana jumlah pasien dengan stroke (1) jauh lebih sedikit 
@@ -137,7 +137,7 @@ Dataset yang digunakan diperoleh dari platform Kaggle dengan judul '[Stroke Pred
 
 2. Distibusi Variabel Numerik
 
-    ![Distibusi Variabel Numerik](img/img-2.png)
+   ![istibusi Variabel Numerik](https://github.com/user-attachments/assets/bcb5786d-6e0c-4d27-ab2a-028c26e29c96)
 
    **Insight**:
    * `age`: Distribusi usia cenderung merata, dengan sedikit puncak pada usia 50–60 tahun.
@@ -153,7 +153,7 @@ Dataset yang digunakan diperoleh dari platform Kaggle dengan judul '[Stroke Pred
 
 3. Korelasi Antar Variabel Numerik
 
-   ![Korelasi Antar Variabel Numerik](img/img-3.png)
+   ![Korelasi Antar Variabel Numerik](https://github.com/user-attachments/assets/e3e4f878-e210-448d-82fc-a2907553eaf6)
 
    **Insight** :
    * `age` memiliki korelasi sedang dengan `bmi` (0.33), menunjukkan sedikit hubungan antara 
@@ -170,10 +170,11 @@ Dataset yang digunakan diperoleh dari platform Kaggle dengan judul '[Stroke Pred
 
 4. Distrbusi Variabel Kategorikal
 
-   ![Distrbusi Variabel Kategorikal](img/img-4.png)
+   ![Distrbusi Variabel Kategorikal](https://github.com/user-attachments/assets/5b44f130-690a-4f8a-a26e-18d77d98fdf3)
 
    **Insight** :
-    * `gender`: Jenis kelamin perempuan lebih banyak dibandingkan laki-laki.
+    * `gender`: Jenis kelamin perempuan lebih banyak dibandingkan laki-laki serta terdapat 
+      Other dengan jumlah yang sangat sedikit.
 
     * `ever_married`: Sebagian besar individu sudah pernah menikah,yang menunjukkan usia 
       individu cenderung dewasa.
@@ -188,7 +189,7 @@ Dataset yang digunakan diperoleh dari platform Kaggle dengan judul '[Stroke Pred
       
 5. Korelasi Antar Fitur Kategorikal
 
-   ![Korelasi Antar Fitur Kategorika](img/img-5.png)
+   ![Korelasi Antar Fitur Kategorikal](https://github.com/user-attachments/assets/ebea6985-d759-48cb-977e-d65a9c0b8ff3)
 
    **Insight** :
     * `gender` tidak memiliki korelasi yang signifikan dengan fitur lain. Nilai korelasinya 
@@ -209,7 +210,7 @@ Dataset yang digunakan diperoleh dari platform Kaggle dengan judul '[Stroke Pred
  
 6. Pengecekan Outlier
 
-   ![Outlier](img/img-6.png)
+   ![Pengecekan Outlier](https://github.com/user-attachments/assets/789de104-91d4-4fed-a040-7e78a05877ce)
 
    **Insight** :
    variabel `avg_glucose_level` dan `bmi` mengandung banyak outlier. `avg_glucose_level` 
@@ -220,21 +221,28 @@ Dataset yang digunakan diperoleh dari platform Kaggle dengan judul '[Stroke Pred
 Proses ini dilakukan untuk memastikan dataset siap digunakan dalam pemodelan prediksi stroke. Tahapan ini dilakukan sebagai berikut:
 1. Drop Kolom id
 
-   ![Drop Kolom id](img/img-7.png)
+   ![Drop Kolom id](https://github.com/user-attachments/assets/ab9ffc4e-45c7-4f01-bbde-e0aacae6e6b0)
 
    Kolom id dihapus dari dataset karena hanya nomor unik  yang tidak memiliki nilai prediktif 
-   terhadap risiko stroke. 
-   
-2. Menghapus Missing Value
+   terhadap risiko stroke.
 
-   ![Menghapus Missing Value](img/img-8.png)
+2. Drop Gender dengan Nilai Other
+   ```
+   df = df[df['gender'] != 'Other']
+   ```
+   menghapus data dengan gender Other karena jumlahnya sangat sedikit dan dianggap tidak 
+   wsignifikan untuk analisis.
+   
+3. Menghapus Missing Value
+
+   ![Menghapus Missing Value](https://github.com/user-attachments/assets/e9801634-45be-43ac-a7bd-e79e25f4b7da)
 
    Missing value pada kolom bmi dihapus karena persentase hanya sedikit  missing value-nya dan 
    menghapusnya tidak akan signifikan mengurangi jumlah data.
    
-3. Menangani Outlier
+4. Menangani Outlier
 
-   ![Menangani Outlier](img/img-9.png)
+   ![Menangani Outlier](https://github.com/user-attachments/assets/c07cde6c-b036-4ba9-91f9-6db86298eee9)
 
    Setelah menangani outlier menggunakan metode Z-score dengan threshold 3, terlihat bahwa 
    nilai-nilai ekstrem pada fitur avg_glucose_level dan bmi masih tetap muncul dalam 
@@ -242,24 +250,24 @@ Proses ini dilakukan untuk memastikan dataset siap digunakan dalam pemodelan pre
    score dengan ambang ±3 berhasil mengidentifikasi dan menghapus sebagian besar data yang 
    menyimpang secara signifikan dari distribusi normalnya.
    
-4. Encoding 
+5. Encoding 
 
-   ![Encoding](img/img-10.png)
+   ![Encoding](https://github.com/user-attachments/assets/0ac0bbe0-9262-4c68-9161-95fc71090b8b)
 
    Proses label encoding dilakukan untuk mengubah nilai kategorikal menjadi format numerik agar 
    bisa diproses oleh algoritma machine learning. Setiap nilai pada kolom gender, ever_married, 
    work_type, Residence_type, dan smoking_status dikonversi menjadi angka menggunakan 
    LabelEncoder.
    
-5. Normalisasi
+6. Normalisasi
 
-   ![Normalisasi](img/img-11.png)
+   ![Normalisasi](https://github.com/user-attachments/assets/a89fd9e8-d8eb-4fd6-b1f8-81b67bbbd8f9)
 
    Fitur numerik (age, avg_glucose_level, bmi) dinormalisasi menggunakan MinMaxScaler untuk 
    mengubah nilai ke rentang 0-1. Normalisasi ini penting supaya rentang nilainya tidak 
    berjauhan.
 
-6. Penyeimbangan Data dan Split Data
+8. Penyeimbangan Data dan Split Data
    ```
    X = df_normalized.drop('stroke', axis=1)
    y = df_normalized['stroke']
@@ -278,7 +286,7 @@ Pada tahap ini, dilakukan proses pemodelan untuk memprediksi risiko stroke mengg
 
 1. Random Forest
 
-![Random Forest](img/img-12.png)
+![Random Forest](https://github.com/user-attachments/assets/a4d70265-a212-45f1-ae70-30cbb6b6eca2)
 
    * Pengertian: Random Forest adalah algoritma ensemble yang menggabungkan banyak pohon 
      keputusan (decision tree) untuk meningkatkan akurasi dan mengurangi risiko overfitting.
@@ -306,7 +314,7 @@ Pada tahap ini, dilakukan proses pemodelan untuk memprediksi risiko stroke mengg
 
 2. Naïve Bayes
 
-   ![Naïve Bayes](img/img-13.png)
+   ![Naïve Bayes](https://github.com/user-attachments/assets/d9029726-58e2-49a4-9a42-b6f2fd5a6bd5)
 
    * Pengertian: Naïve Bayes adalah algoritma berbasis probabilitas yang menerapkan teorema 
      Bayes dengan asumsi bahwa fitur-fitur saling independen.
@@ -328,7 +336,7 @@ Pada tahap ini, dilakukan proses pemodelan untuk memprediksi risiko stroke mengg
   
 3. XGBoost
 
-   ![XGBoost](img/img-14.png)
+   ![XGBoost](https://github.com/user-attachments/assets/61667eea-a844-431b-a871-e222d7a89374)
 
    * Pengertian: XGBoost (Extreme Gradient Boosting) adalah algoritma gradient boosting yang 
      membangun pohon keputusan secara bertahap untuk memperbaiki kesalahan dari prediksi 
